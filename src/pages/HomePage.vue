@@ -15,19 +15,17 @@ import GiftCard from '../components/GiftCard.vue';
 export default {
   setup() {
     onMounted(() => {
-      getGifts();
-    });
-    computed(() => {
       getGifts()
-    })
+    });
+
 
 
     async function getGifts() {
       try {
-        await giftService.getGifts();
+        await giftService.getGifts()
       }
       catch (error) {
-        Pop.error(error);
+        Pop.error(error)
       }
     }
 

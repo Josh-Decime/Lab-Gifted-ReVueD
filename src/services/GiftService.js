@@ -18,10 +18,12 @@ class GiftService {
     async openGift(id) {
         // console.log('id:', id)
         let foundGift = AppState.gifts.find(gift => gift.id == id)
-        foundGift.opened = !foundGift.opened
+        // if (!foundGift.opened)
+        foundGift.opened = true
         console.log('🎁 open gift', foundGift)
         const response = await api.put(`api/gifts/${id}`, foundGift)
         console.log('response data:', response.data)
+        this.getGifts()
     }
 
 

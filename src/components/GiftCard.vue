@@ -21,6 +21,7 @@ export default {
         async function openGift(id) {
             try {
                 await giftService.openGift(id)
+                await giftService.getGifts()
             } catch (error) {
                 Pop.error(error)
             }
