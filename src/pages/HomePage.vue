@@ -1,5 +1,8 @@
 <template>
   <section class="row">
+    <div>
+      <GiftForm />
+    </div>
     <div v-for="gift in gifts" class="col-3">
       <GiftCard :giftProp="gift" />
     </div>
@@ -12,6 +15,7 @@ import Pop from '../utils/Pop.js';
 import { AppState } from '../AppState.js';
 import { giftService } from '../services/GiftService.js';
 import GiftCard from '../components/GiftCard.vue';
+import GiftForm from '../components/GiftForm.vue';
 export default {
   setup() {
     onMounted(() => {
@@ -38,7 +42,7 @@ export default {
 
     };
   },
-  components: { GiftCard }
+  components: { GiftCard, GiftForm }
 }
 </script>
 
